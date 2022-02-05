@@ -6,6 +6,6 @@ app.listen(3000, ()=> {
     console.log('Esta funcionando');
 })
 
-app.get("/", (req, res)=>{
-    res.send ('Será que ta funcionando?????')
-})
+const minhaRouter = require("./rotas/jogos");
+
+app.use("/jogos", minhaRouter);
