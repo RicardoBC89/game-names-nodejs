@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+require('dotenv/config')
 
 
-mongoose.connect("mongodb+srv://admin:admin@cluster0.oom4a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", (erro) => {
+mongoose.connect(process.env.DB_CREDENTIALS, (erro) => {
     if (erro) {
         console.log("Falha ao conectar ao Banco de dados");
     } else {
